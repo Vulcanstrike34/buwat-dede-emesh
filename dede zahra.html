@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permintaan Maaf</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #e63946;
+    }
+    .heart-container {
+      position: fixed;
+      top: 40%; /* Naikkan hati sedikit */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+      text-align: center;
+    }
+    .heart-3d {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: #ff6b6b;
+      transform: rotate(-45deg);
+      margin: auto;
+    }
+    .heart-3d::before,
+    .heart-3d::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #ff6b6b;
+      border-radius: 50%;
+    }
+    .heart-3d::before {
+      top: -50px;
+      left: 0;
+    }
+    .heart-3d::after {
+      left: 50px;
+      top: 0;
+    }
+    .heart-3d {
+      animation: beat 0.8s infinite;
+    }
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+    .message {
+      color: white;
+      font-size: 24px; /* Perbesar teks */
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Kepada Adik Tersayang</h1>
+    <button id="klik-ya">Klik Ya</button>
+  </div>
+  <div class="heart-container">
+    <div class="heart-3d"></div>
+    <div class="message">Maaf ya, adikku sayang jangan ngambek lagii yaa seloow abang lu ga nyari ade lagi koo kan adenya cuma dede zahra ❤️</div>
+  </div>
+  <script>
+    const button = document.getElementById("klik-ya");
+    const container = document.querySelector(".container");
+    const heartContainer = document.querySelector(".heart-container");
+
+    button.addEventListener("click", () => {
+      container.style.display = "none"; // Hilangkan tombol dan teks utama
+      heartContainer.style.display = "block"; // Tampilkan animasi love 3D
+    });
+  </script>
+</body>
+</html>
